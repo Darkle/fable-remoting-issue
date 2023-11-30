@@ -10,7 +10,7 @@ let server =
 [<EntryPoint>]
 let main _ =
     async {
-        let! res = server.findPosts_Paginated ()
+        let! res = server.getPost ()
         printfn "%A" res
     }
     |> Async.RunSynchronously

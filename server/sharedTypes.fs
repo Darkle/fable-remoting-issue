@@ -1,7 +1,6 @@
 module SharedTypes
 
-[<CLIMutable>]
+[<CLIMutable>] // this is the issue
 type Post = { timestamp: string }
 
-type ApiPostsEndpoints =
-    { findPosts_Paginated: unit -> Async<Post> }
+type ApiPostsEndpoints = { getPost: unit -> Async<Post> }
