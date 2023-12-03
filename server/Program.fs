@@ -7,12 +7,12 @@ open SharedTypes
 
 let postTimestamp = "2023-12-03T11:49:41"
 
-let getPost () = async { return postTimestamp }
-let getPost_Result () = async { return Ok(postTimestamp) }
+let getPostTimestamp () = async { return postTimestamp }
+let getPostTimestamp_Result () = async { return Ok(postTimestamp) }
 
 let apiPostsEndpoints: Api =
-    { getPostTimestamp = getPost
-      getPostTimestamp_Result = getPost_Result }
+    { getPostTimestamp = getPostTimestamp
+      getPostTimestamp_Result = getPostTimestamp_Result }
 
 let webApp = Remoting.createApi () |> Remoting.fromValue apiPostsEndpoints
 
