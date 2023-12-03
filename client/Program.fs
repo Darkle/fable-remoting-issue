@@ -14,7 +14,10 @@ let main _ =
 
         let! res = server.getPost_Result ()
 
-        printfn "getPost_Result: %A" res
+        match res with
+        | Ok r -> printfn "getPost_Result: %A" r
+        | Error e -> printfn "error: %A" e
+
     }
     |> Async.RunSynchronously
 
