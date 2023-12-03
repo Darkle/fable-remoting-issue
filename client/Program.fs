@@ -10,12 +10,12 @@ let main _ =
     async {
         let! res = server.getPostTimestamp ()
 
-        printfn "getPost: %A" res
+        printfn "getPostTimestamp: %A" res
 
         let! res = server.getPostTimestamp_Result ()
 
         match res with
-        | Ok r -> printfn "getPost_Result: %A" r
+        | Ok r -> printfn "getPostTimestamp_Result: %A" r
         | Error e -> printfn "error: %A" e
 
     }
