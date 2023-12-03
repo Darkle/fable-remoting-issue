@@ -5,10 +5,14 @@ open Fable.Remoting.AspNetCore
 open Microsoft.AspNetCore.Hosting
 open SharedTypes
 
-let getPost () =
-    async { return { timestamp = "2023-12-01T09:21:01" } }
+let post = { timestamp = "2023-12-03T11:49:41" }
 
-let apiPostsEndpoints: ApiPostsEndpoints = { getPost = getPost }
+let getPost () = async { return post }
+let getPost_Result () = async { return Ok(post) }
+
+let apiPostsEndpoints: Api =
+    { getPost = getPost
+      getPost_Result = getPost_Result }
 
 let webApp = Remoting.createApi () |> Remoting.fromValue apiPostsEndpoints
 

@@ -1,6 +1,7 @@
 module SharedTypes
 
-[<CLIMutable>] // this is the issue
 type Post = { timestamp: string }
 
-type ApiPostsEndpoints = { getPost: unit -> Async<Post> }
+type Api =
+    { getPost_Result: unit -> Async<Result<Post, exn>>
+      getPost: unit -> Async<Post> }
