@@ -1,7 +1,7 @@
 module SharedTypes
 
-type Post = { timestamp: string }
+type PostTimestamp = string
 
 type Api =
-    { getPost: unit -> Async<Post>
-      getPost_Result: unit -> Async<Result<Post, exn>> }
+    { getPostTimestamp: unit -> Async<PostTimestamp>
+      getPostTimestamp_Result: unit -> Async<Result<PostTimestamp, exn>> }
